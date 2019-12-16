@@ -7,4 +7,5 @@ class Personnage:
         self.attaque = attaque
         self.défense = défense
         self.agilité = agilité
+        self.nom = nom
         self.mana = mana
