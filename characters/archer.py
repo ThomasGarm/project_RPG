@@ -3,6 +3,6 @@ from characters.personnage import Personnage
 
 class Archer(Personnage):
 
-    def __init__(self, vie, attaque, défense, agilité):
+    def __init__(self):
         super().__init__(150, 40, 50, 40)
     
