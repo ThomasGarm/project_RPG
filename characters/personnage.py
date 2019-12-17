@@ -2,9 +2,9 @@
 
 class Personnage:
     
-    def __init__(self, vie, attaque, défense, agilité, nom, mana):
+    def __init__(self, vie, attaque, défense, agilité):
         self.vie = vie
         self.attaque = attaque
         self.défense = défense
         self.agilité = agilité
-        self.mana = mana
+       
