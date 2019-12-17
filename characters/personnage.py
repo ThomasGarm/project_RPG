@@ -8,3 +8,7 @@ class Personnage:
         self.défense = défense
         self.agilité = agilité
        
+    def __repr__(self):
+        return super().__repr__()
+
+    

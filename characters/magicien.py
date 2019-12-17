@@ -1,9 +1,10 @@
 """PROJECT RPG DONJONS ET DRAGONS"""
+
 from characters.personnage import Personnage
 
 class Magicien(Personnage):
-    mana = 200
 
-    def __init__(self):
+    def __init__(self, mana):
         super().__init__(150, 40, 50, 20)
-    
+        self.mana = 200
+
