@@ -2,10 +2,10 @@ from game.game import Game
 
 
 game = Game()
-game.player_name()
-game.character_choice()
-print(game.character_choice)
 
-print(game.ennemy_choice)
+game.test_chara()
+game.test_ennemy()
+
+game.__repr__()
     
 
