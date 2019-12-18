@@ -11,3 +11,5 @@ class Combat:
     def attack(self):
             attack = self.perso.attaque - self.ennemy.défense
             return self.ennemy.vie - attack
+
+    

@@ -15,8 +15,8 @@ class Game:
         
     def player_name(self):
         partie1()
-        self.nom= input("Quel est votre nom ?")
-        print(f"Bienvenue {self.nom}, jeune padawan de la programmation !")
+        self.nom= input("Quel est votre nom ? \n").upper()
+        print(f"Bienvenue {self.nom}, jeune padawan de la programmation !\n")
 
     def character_choice(self):
         print("[GUERRIER] |[ARCHER] | [MAGICIEN]")
@@ -38,10 +38,10 @@ class Game:
 
         print("Attaque: A , Fuir: F")
         player = input("Que choisissez-vous faire ? ").lower()
-        #while self.perso.vie > 0 and self.ennemy.vie > 0:
-        if player == "a":
-            self.combat.attack()
-            print(self.ennemy.vie)
+        while self.perso.vie > 0 and self.ennemy.vie > 0:
+            if player == "a":
+                self.combat.attack()
+                print(self.ennemy.vie)
             # elif player == "f":
             #     print(True)
             # else:

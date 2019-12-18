@@ -6,10 +6,10 @@ if __name__ == "__main__":
     game.player_name()
     game.character_choice()
     game.ennemy_vs_player()
-    games = Attack()
+    #games = Attack()
     print(game.character_choice)
     print(game.ennemy_choice)
     print(game.ennemy_vs_player)
-    print(attack)
+    print(combat.attack)
     
 
