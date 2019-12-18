@@ -10,6 +10,7 @@ saisissez la poignée et.... Oh surprise la salle est vide, cependant une chose 
           
 def parti2():
     print("")
-
+    pass
 def parti3():
     print("")
+    pass
