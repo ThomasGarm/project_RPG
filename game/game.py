@@ -38,9 +38,9 @@ class Game:
 
         print("Attaque: A , Fuir: F")
         player = input("Que choisissez-vous faire ? ").lower()
-        # while self.perso.vie >= 0 and self.ennemy.vie >= 0:
+        #while self.perso.vie > 0 and self.ennemy.vie > 0:
         if player == "a":
-            self.attack()
+            self.combat.attack()
             print(self.ennemy.vie)
             # elif player == "f":
             #     print(True)

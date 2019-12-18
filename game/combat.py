@@ -6,7 +6,7 @@ from game.naration import *
 from game.combat import *
 from characters.personnage import Personnage
 
-class Combat(Personnage):
+class Combat:
 
     def attack(self):
             attack = self.perso.attaque - self.ennemy.défense
