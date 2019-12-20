@@ -14,7 +14,7 @@ class Game:
         self.nom = None
         self.perso = None
         self.ennemy = None
-        self.guerrier = Guerrier()
+        
         
         
         
@@ -46,7 +46,7 @@ class Game:
             
     def ennemy_choice(self,):
         self.ennemy = Thomas_le_méchant()
-    
+        return
     
         
         
@@ -56,6 +56,8 @@ class Game:
     def attack(self):
         attack = self.perso.attaque - self.ennemy.défense
         return self.ennemy.vie - attack
+
+    
 
     #def esquive(self):
         
