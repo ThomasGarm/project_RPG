@@ -12,6 +12,8 @@ class Magicien(Personnage):
         self.mana -= 50
         self.vie += 100 
         print(f"Il vous reste {self.mana} mana et votre vie remonte à {self.vie}")
+        if self.mana == 0:
+            print("Vous ne pouvez plus vous soigner.")
 
 
 

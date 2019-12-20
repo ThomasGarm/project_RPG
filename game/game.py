@@ -5,6 +5,7 @@ from characters.thomas_le_méchant import Thomas_le_méchant
 from characters.magicien import Magicien
 from game.naration import *
 import random
+import os
 
 class Game:
     def __init__(self):
@@ -34,9 +35,7 @@ class Game:
             return self.perso
         elif self.perso == "magicien":
             self.perso = self.magicien
-            
-            
-                    
+            return self.perso
         else:
             print("je connais pas cette aventurier !")
             self.character_choice()
@@ -53,24 +52,25 @@ class Game:
         partie2()
         self.ennemy_choice()
         while self.perso.vie > 0 and self.ennemy.vie > 0:
+            
             print("[Attaque: A , Fuir: F]")
             if self.perso == self.magicien:
                 print("[SE SOIGNER: S]")
-            action = input("Que choisissez-vous faire ? ").lower()
+            action = input("Que choisissez-vous de faire ? ").lower()
             
             if action == "a":
                 self.fight_action()
                 self.fight_action_ennemy()
                 print(f"{self.nom} attaque respectueusement {self.ennemy.name}")
-                print(f"Votre vie est de [{self.perso.vie} points]/ celle de votre adversaire est de [{self.ennemy.vie}]")
+                print("=====================================")
+                print(f"Votre vie: [{self.perso.vie} points]/ celle de votre adversaire est de [{self.ennemy.vie}]")
                 print(f"[votre défense est de {self.perso.défense} points]/ [celle de votre adversaire est de {self.ennemy.défense}]")  
             if action == "s":
                 self.magicien.cast()
             if action == "f":
-                print("fuite")
                 self.flee()
-            else:
-                print ("Pas compris")
+        else:
+            print ("Pas compris")
                 
         print("le combat est terminé !")
 
