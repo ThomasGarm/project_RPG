@@ -3,6 +3,7 @@ from characters.guerrier import Guerrier
 from characters.archer import Archer
 from characters.personnage import Personnage
 
+<<<<<<< HEAD
 if __name__ == "__main__":
     
     game = Game()
@@ -17,5 +18,7 @@ if __name__ == "__main__":
     
     
     
+
+
     
 

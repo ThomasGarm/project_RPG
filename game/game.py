@@ -17,6 +17,8 @@ class Game:
         self.nom= input("Quel est votre nom ? ").upper()
         print(f"Bienvenue {self.nom}, jeune padawan de la programmation !\n")
 
+       
+
     def character_choice(self):
         print("[GUERRIER] |[ARCHER] | [MAGICIEN]\n")
         self.perso = input("Choisissez un aventurier parmis ces trois personnage :\n").lower()
@@ -32,8 +34,10 @@ class Game:
         else:
             print("je connais pas cette aventurier !")
             self.character_choice()
+
             
-    def ennemy_choice(self):
+            
+    def test_ennemy(self):
         self.ennemy = Thomas_le_méchant()
         print("Thommas le méchant s'approche de vous armé de sa grande régles épineuse !\n")
         return self.ennemy
@@ -56,6 +60,7 @@ class Game:
                 self.fight_action()
                 print(self.ennemy.vie)
         print("le combat est terminé !")
+
         
 
 
