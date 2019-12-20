@@ -5,6 +5,7 @@ from characters.thomas_le_méchant import Thomas_le_méchant
 from characters.magicien import Magicien
 from game.naration import *
 import random 
+import os
 
 class Game:
     def __init__(self):
@@ -37,7 +38,9 @@ class Game:
             
     def ennemy_choice(self):
         self.ennemy = Thomas_le_méchant()
-        print("THOMMAS LE MÉCHANT ;-( S'APPROCHE DE VOUS ARMÉ DE SA GRANDE RÉGLES ÉPINEUSE !\n--DEUX CHOIX S'OFFRE À VOUS-- ")
+        print("=============================================================================")
+        print("THOMAS LE MÉCHANT ;-( S'APPROCHE DE VOUS ARMÉ DE SA GRANDE RÉGLES ÉPINEUSE !\n--DEUX CHOIX S'OFFRE À VOUS-- ")
+        print("=============================================================================")
         return self.ennemy
 
     def ennemy_vs_player(self):
@@ -49,6 +52,7 @@ class Game:
             if self.perso == self.magicien:
                 print("Se Soigner: S")
             action = input("Que choisissez-vous de faire ? ").lower()
+            os.system('clear')
             print("========================================================")
             if action == "a":
                 self.fight_action()
@@ -58,7 +62,8 @@ class Game:
                 print(f"[votre vie est de {self.perso.vie} points]")
                 print(f"[votre défense est de {self.perso.défense} points]\n") 
                 print(f"[la vie de {self.ennemy.name} est de {self.ennemy.vie} points]")
-                print(f"[la défense de Thomas_le_méchant est de {self.ennemy.défense} points]\n")   
+                print(f"[la défense de Thomas_le_méchant est de {self.ennemy.défense} points]\n")
+
             if action == "s":
                 self.magicien.se_soigner()
             if action == "f":
