@@ -14,7 +14,7 @@ class Game:
         
     def player_name(self):
         partie1()
-        self.nom= input("Quel est votre nom ? ").upper()
+        self.nom= input("Quel est votre nom ? ==> ").upper()
         print(f"Bienvenue {self.nom}, jeune padawan de la programmation !\n")
 
        
@@ -29,7 +29,7 @@ class Game:
             self.perso = Archer()
             return self.perso
         elif self.perso == "magicien":
-            self.perso = Magicien()
+            self.perso = Magicien(mana)
             return self.perso
         else:
             print("je connais pas cette aventurier !")
@@ -37,7 +37,7 @@ class Game:
 
             
             
-    def test_ennemy(self):
+    def ennemy_choice(self):
         self.ennemy = Thomas_le_méchant()
         print("Thommas le méchant s'approche de vous armé de sa grande régles épineuse !\n")
         return self.ennemy
@@ -52,9 +52,9 @@ class Game:
             if action == "a":
                 self.fight_action()
                 self.fight_action_ennemy()
-                print(f"{self.nom} attaque violamment {self.ennemy.name}")
-                print(f"[votre vie est de {self.perso.vie} points]")
-                print(f"[votre défense est de {self.perso.défense} points]\n")  
+                print(f"{self.nom} attaque respectueusement {self.ennemy.name}")
+                print(f"Votre vie est de [{self.perso.vie} points]/ celle de votre adversaire est de [{self.ennemy.vie}]")
+                print(f"[votre défense est de {self.perso.défense} points]/ [celle de votre adversaire est de {self.ennemy.défense}]")  
             else:
                 print("fuite")
                 self.fight_action()
