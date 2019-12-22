@@ -40,6 +40,7 @@ class Game:
         self.ennemy = Thomas_le_méchant()
         print("=============================================================================")
         print("THOMAS LE MÉCHANT ;-( S'APPROCHE DE VOUS ARMÉ DE SA GRANDE RÉGLES ÉPINEUSE !\n--DEUX CHOIX S'OFFRE À VOUS-- ")
+        print("sauf si vous jouez magos")
         print("=============================================================================")
         return self.ennemy
 
@@ -57,7 +58,7 @@ class Game:
             if action == "a":
                 self.fight_action()
                 self.fight_action_ennemy()
-                print(f"{self.nom} | attaque violamment | {self.ennemy.name}")
+                print(f"{self.nom} | attaque respectueusement | {self.ennemy.name}")
                 print("========================================================")
                 print(f"[votre vie est de {self.perso.vie} points]")
                 print(f"[votre défense est de {self.perso.défense} points]\n") 
@@ -69,8 +70,8 @@ class Game:
             if action == "f":
                 self.flee()
                 
-
-        print("le combat est terminé !")
+        partie3()
+        print("le combat est terminé, vous avez bien appris !")
 
     def fight_action(self):
         if self.ennemy.défense > 0:
