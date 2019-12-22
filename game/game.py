@@ -16,11 +16,13 @@ class Game:
         
         
     def player_name(self):
+        # One method for the character name
         partie1()
         self.nom= input("Quel est votre nom ? ").upper()
         print(f"Bienvenue {self.nom}, il est temps de prendre votre courage a deux mains !\n")
 
     def character_choice(self):
+        # method that will define self.perso used for the rest of the game
         print("[GUERRIER] |[ARCHER] | [MAGICIEN]\n")
         self.perso = input("Choisissez un aventurier parmis ces trois personnage :" ).lower()
         if self.perso == "guerrier":
@@ -33,10 +35,11 @@ class Game:
             self.perso = self.magicien
             return self.perso
         else:
-            print("Désoler, je connais pas cette aventurier !")
+            print("Désolé, je ne connais pas cette aventurier !")
             self.character_choice()
             
     def ennemy_choice(self):
+        #only one foe here but with a random instead it work !
         self.ennemy = Thomas_le_méchant()
         print("=============================================================================")
         print("THOMAS LE MÉCHANT ;-( S'APPROCHE DE VOUS ARMÉ DE SA GRANDE RÉGLES ÉPINEUSE !\n--DEUX CHOIX S'OFFRE À VOUS-- ")
@@ -45,12 +48,13 @@ class Game:
         return self.ennemy
 
     def ennemy_vs_player(self):
+        #battle loop, define start en end of the battle + action choices
         self.character_choice()
         partie2()
         self.ennemy_choice()
         while self.perso.vie > 0 and self.ennemy.vie > 0:
             print("[Attaque: A , Fuir: F]")
-            if self.perso == self.magicien:
+            if self.perso == self.magicien: #add magician's skill
                 print("Se Soigner: S")
             action = input("Que choisissez-vous de faire ? ").lower()
             os.system('clear')
@@ -74,6 +78,7 @@ class Game:
         print("le combat est terminé, vous avez bien appris !")
 
     def fight_action(self):
+        #based on character's stats, a method for calculating damage and life
         if self.ennemy.défense > 0:
             if self.ennemy.défense < self.perso.attaque:
                 self.ennemy.vie -= (self.perso.attaque - self.ennemy.défense)
@@ -90,6 +95,7 @@ class Game:
         return(self.ennemy.vie)
 
     def fight_action_ennemy(self):
+        #same than fight-action but counter attack from the foe
         if self.perso.défense > 0:
             if self.perso.défense < self.ennemy.attaque:
                 self.perso.vie -= (self.ennemy.attaque - self.perso.défense)
@@ -106,6 +112,7 @@ class Game:
         return(self.perso.vie)
 
     def flee(self):
+        #based on agility stat, modifying the randint modify the chance
         if random.randint(0, 100) in range(0, self.perso.agilité):
             print("Ah tu fuis, j'attend ton mail avec ton lien git-hub !?")
             self.perso.vie = 0
