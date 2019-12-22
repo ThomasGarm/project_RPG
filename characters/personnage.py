@@ -10,5 +10,3 @@ class Personnage:
        
     def __repr__(self):
         return super().__repr__()
-
-    
